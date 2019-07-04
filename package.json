@@ -1,0 +1,46 @@
+{
+  "name": "second",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "export NODE_ENV=test && sequelize db:migrate:undo:all  && sequelize db:migrate && nyc --reporter=lcov --reporter=text-lcov  mocha ./test/index.test.js --timeout 20000 --exit",
+    "test-open": "open coverage/lcov-report/index.html"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^3.1.0",
+    "bcrypt": "^3.0.6",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.1.0",
+    "fast-json-parse": "^1.0.3",
+    "fast-safe-stringify": "^2.0.6",
+    "helmet": "^3.18.0",
+    "istanbul": "^0.4.5",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.11",
+    "mocha": "^6.1.4",
+    "mysql2": "^1.6.5",
+    "nyc": "^14.1.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "path": "^0.12.7",
+    "redis-pool-connection": "^1.4.0",
+    "sequelize": "^5.9.0",
+    "should": "^13.2.3",
+    "x-xss-protection": "^1.2.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.1"
+  }
+}
